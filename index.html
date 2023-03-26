@@ -1,67 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EgberGroup Coming Soon</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            font-size: 24px;
-        }
-        button {
-            background-color: white;
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-        button:hover {
-            background-color: #ddd;
-        }
-    </style>
-    <script src="https://alcdn.msauth.net/browser/2.19.0/js/msal-browser.min.js" integrity="sha384-1f1D8E0+QA6/IbTXk8Eog6Q2ODByxG3dM1FBMq3I6yMewItUzB6lLgGdKku6GRcB" crossorigin="anonymous"></script>
-    <script>
-        // Replace with your Application (client) ID and Directory (tenant) ID
-        const clientId = "e8e9f45d-7d13-4d32-98db-5301cd10723e";
-        const tenantId = "4a6a40a4-94b0-4ec7-ba26-a416d9092559";
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EgberGroup Coming Soon</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+    }
 
-        const msalConfig = {
-            auth: {
-                clientId: clientId,
-                authority: `https://login.microsoftonline.com/${tenantId}`,
-                redirectUri: location.origin,
-            },
-            cache: {
-                cacheLocation: "localStorage",
-                storeAuthStateInCookie: false,
-            },
-        };
+    #signInButton {
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 18px;
+      margin-top: 20px;
+    }
 
-        const msalInstance = new msal.PublicClientApplication(msalConfig);
+    #signInButton:hover {
+      background-color: #ddd;
+    }
+  </style>
+  <script src="https://alcdn.msauth.net/browser/2.19.0/js/msal-browser.min.js"
+    integrity="sha384-1f1D8E0+QA6/IbTXk8Eog6Q2ODByxG3dM1FBMq3I6yMewItUzB6lLgGdKku6GRcB"
+    crossorigin="anonymous"></script>
+  <script>
+    // Replace with your Application (client) ID and Directory (tenant) ID
+    const clientId = "e8e9f45d-7d13-4d32-98db-5301cd10723e";
+    const tenantId = "4a6a40a4-94b0-4ec7-ba26-a416d9092559";
 
-        function signIn() {
-            const loginRequest = {
-                scopes: ["openid", "profile", "User.Read"]
-            };
-            msalInstance.loginPopup(loginRequest)
-                .then(response => {
-                    console.log(response);
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        }
-    </script>
+    const msalConfig = {
+      auth: {
+        clientId: clientId,
+        authority: `https://login.microsoftonline.com/${tenantId}`,
+        redirectUri: location.origin,
+      },
+      cache: {
+        cacheLocation: "localStorage",
+        storeAuthStateInCookie: false,
+      },
+    };
+
+    const msalInstance = new msal.PublicClientApplication(msalConfig);
+
+    function signIn() {
+      const loginRequest = {
+        scopes: ["openid", "profile", "User.Read"],
+      };
+
+      msalInstance.loginPopup(loginRequest)
+        .then((response) => {
+          console.log("Login response:", response);
+          // Handle successful login and perform desired actions here
+        })
+        .catch((error) => {
+          console.error("Login error:", error);
+        });
+    }
+  </script>
 </head>
-<body
+
+<body>
+  <div>EgberGroup is coming soon</div>
+  <button id="signInButton" onclick="signIn()">Sign In</button>
+</body>
+
+</html>
