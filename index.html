@@ -17,10 +17,13 @@
             font-size: 24px;
         }
     </style>
-</head>
-<body>
-    <div>
-        EgberGroup is coming soon
-    </div>
-</body>
-</html>
+    <script src="https://alcdn.msauth.net/browser/2.19.0/js/msal-browser.min.js" integrity="sha384-1f1D8E0+QA6/IbTXk8Eog6Q2ODByxG3dM1FBMq3I6yMewItUzB6lLgGdKku6GRcB" crossorigin="anonymous"></script>
+    <script>
+        // Replace with your Application (client) ID and Directory (tenant) ID
+        const clientId = "Ye8e9f45d-7d13-4d32-98db-5301cd10723e";
+        const tenantId = "4a6a40a4-94b0-4ec7-ba26-a416d9092559";
+
+        const msalConfig = {
+            auth: {
+                clientId: clientId,
+                authority
