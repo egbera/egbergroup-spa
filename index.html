@@ -55,6 +55,11 @@
       }
     }
   </style>
+</head>
+
+<body>
+  <button id="signInButton" onclick="signIn()">Sign In</button>
+  <div id="content" class="hidden">EgberGroup is coming soon</div>
   <script src="https://alcdn.msauth.net/browser/2.19.0/js/msal-browser.min.js"
     integrity="sha384-1f1D8E0+QA6/IbTXk8Eog6Q2ODByxG3dM1FBMq3I6yMewItUzB6lLgGdKku6GRcB"
     crossorigin="anonymous"></script>
@@ -93,12 +98,4 @@
     }
 
     function showContent() {
-      const contentDiv = document.getElementById("content");
-      contentDiv.classList.remove("hidden");
-    }
-  </script>
-</head>
-
-<body>
-  <button id="signInButton" onclick="signIn()">Sign In</button>
-  <div id="content"
+      const content
