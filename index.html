@@ -32,6 +32,10 @@
     #signInButton:hover {
       background-color: #ddd;
     }
+
+    .hidden {
+      display: none;
+    }
   </style>
   <script src="https://alcdn.msauth.net/browser/2.19.0/js/msal-browser.min.js"
     integrity="sha384-1f1D8E0+QA6/IbTXk8Eog6Q2ODByxG3dM1FBMq3I6yMewItUzB6lLgGdKku6GRcB"
@@ -63,18 +67,23 @@
       msalInstance.loginPopup(loginRequest)
         .then((response) => {
           console.log("Login response:", response);
-          // Handle successful login and perform desired actions here
+          showContent();
         })
         .catch((error) => {
           console.error("Login error:", error);
         });
     }
+
+    function showContent() {
+      const contentDiv = document.getElementById("content");
+      contentDiv.classList.remove("hidden");
+    }
   </script>
 </head>
 
 <body>
-  <div>EgberGroup is coming soon</div>
   <button id="signInButton" onclick="signIn()">Sign In</button>
+  <div id="content" class="hidden">EgberGroup is coming soon</div>
 </body>
 
 </html>
