@@ -37,4 +37,30 @@
   </style>
   <script src="https://alcdn.msauth.net/browser/2.19.0/js/msal-browser.min.js"
     integrity="sha384-1f1D8E0+QA6/IbTXk8Eog6Q2ODByxG3dM1FBMq3I6yMewItUz
+    crossorigin="anonymous"></script>
+  <script>
+    const msalConfig = {
+      auth: {
+        clientId: 'e8e9f45d-7d13-4d32-98db-5301cd10723e',
+        authority: 'https://login.microsoftonline.com/YOUR_TENANT_ID'
+      }
+    };
 
+    const msalInstance = new msal.PublicClientApplication(msalConfig);
+
+    async function signIn() {
+      try {
+        const loginResponse = await msalInstance.loginPopup();
+        console.log('User logged in', loginResponse);
+        // Call API or navigate to protected page after successful login
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>EgberGroup coming soon - An ASCS Business Partner</h1>
+  <button id="signInButton" onclick="signIn()">Sign In</button>
+</body>
+</html>
