@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EgberGroup Coming Soon</title>
   <style>
     body {
@@ -18,86 +16,9 @@
       font-family: Arial, sans-serif;
       font-size: 24px;
     }
-
-    #signInButton {
-      background-color: white;
-      color: black;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 18px;
-      margin-top: 20px;
-      transition: all 0.3s ease-in-out;
-      -webkit-transition: all 0.3s ease-in-out;
-      -moz-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-    }
-
-    #signInButton:hover {
-      background-color: #ddd;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    @media only screen and (max-width: 768px) {
-      #signInButton {
-        font-size: 16px;
-        padding: 8px 16px;
-      }
-    }
-
-    @media only screen and (max-width: 480px) {
-      #signInButton {
-        font-size: 14px;
-        padding: 6px 12px;
-      }
-    }
   </style>
- <script src="https://alcdn.msauth.net/browser/2.19.0/js/msal-browser.min.js"
-  integrity="sha384-VK+6hHt27itNFksZdEeXofJXdAhmlizHbC/a1TUUJm/Yq6gOuAjXKkiiCaGbFsnd"
-  crossorigin="anonymous"></script>
-  <script>
-    // Replace with your Application (client) ID and Directory (tenant) ID
-    const clientId = "e8e9f45d-7d13-4d32-98db-5301cd10723e";
-    const tenantId = "4a6a40a4-94b0-4ec7-ba26-a416d9092559";
-
-    const msalConfig = {
-      auth: {
-        clientId: clientId,
-        authority: `https://login.microsoftonline.com/${tenantId}`,
-        redirectUri: location.origin,
-      },
-      cache: {
-        cacheLocation: "localStorage",
-        storeAuthStateInCookie: false,
-      },
-    };
-
-    const msalInstance = new msal.PublicClientApplication(msalConfig);
-
-    function signIn() {
-      const loginRequest = {
-        scopes: ["openid", "profile", "User.Read"],
-      };
-
-      msalInstance.loginPopup(loginRequest)
-        .then((response) => {
-          console.log("Login response:", response);
-          showContent();
-        })
-        .catch((error) => {
-          console.error("Login error:", error);
-        });
-    }
-
-    function showContent() {
-      const contentDiv = document.getElementById("content");
-      contentDiv.classList.remove("hidden");
-    }
-  </script>
 </head>
-
 <body>
-  <button id="signInButton" onclick
+  <h1>EgberGroup coming soon - An ASCS Business Partner</h1>
+</body>
+</html>
