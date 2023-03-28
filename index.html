@@ -1,66 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>EgberGroup Coming Soon</title>
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      font-size: 24px;
-    }
-
-    #signInButton {
-      background-color: white;
-      color: black;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 18px;
-      margin-top: 20px;
-      transition: all 0.3s ease-in-out;
-      -webkit-transition: all 0.3s ease-in-out;
-      -moz-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-    }
-
-    #signInButton:hover {
-      background-color: #ddd;
-    }
-  </style>
-  <script src="https://alcdn.msauth.net/browser/2.19.0/js/msal-browser.min.js"
-    integrity="sha384-1f1D8E0-QA6/IbTXk8Eog6Q2ODByxG3dM1FBMq3I6yMewItUz-"
-    crossorigin="anonymous"></script>
-  <script>
-    const msalConfig = {
-      auth: {
-        clientId: 'e8e9f45d-7d13-4d32-98db-5301cd10723e',
-        authority: 'https://login.microsoftonline.com/4a6a40a4-94b0-4ec7-ba26-a416d9092559'
+<html>
+  <head>
+    <title>EgberGroup Cybersecurity Services for Small Business</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
       }
-    };
-
-    const msalInstance = new msal.PublicClientApplication(msalConfig);
-
-    async function signIn() {
-      try {
-        const loginResponse = await msalInstance.loginPopup();
-        console.log('User logged in', loginResponse);
-        // Call API or navigate to protected page after successful login
-      } catch (error) {
-        console.log(error);
+      
+      #header {
+        background-color: #005A8C;
+        color: white;
+        text-align: center;
+        padding: 20px;
       }
-    }
-  </script>
-</head>
-<body>
-  <h1>EgberGroup coming soon - An ASCS Business Partner</h1>
-  <button id="signInButton" onclick="signIn()">Sign In</button>
-</body>
-</html>
+      
+      #header h1 {
+        margin: 0;
+        font-size: 48px;
+        font-weight: bold;
+      }
+      
+      #banner {
+        background-image: url('https://i.imgur.com/n1KGb7W.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+      }
+      
+      #banner h2 {
+        font-size: 64px;
+        font-weight: bold;
+        margin: 0;
+      }
+      
+      #services {
+        background-color: #F2F2F2;
+        padding: 50px;
+        text-align: center;
+      }
+      
+      #services h2 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 50px;
+      }
+      
+      #services ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      #services li {
+        width: 300px;
+        margin: 20px;
+        padding: 20px;
+        background-color: white;
+        border: 1px solid #CCCCCC;
+        border-radius: 10px;
+      }
+      
+      #services li:hover {
+        box-shadow: 0px 0px 10px 0px #CCCCCC;
+        transition: box-shadow 0.3s ease;
+      }
+      
+      #services li h3 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+      }
+      
+      #services li p {
+        font-size: 18px;
+        margin-top: 10px;
+        line-height: 1.5;
+      }
+      
+      #cta {
+        background-color: #005A8C;
+        color: white;
+        text-align: center;
+        padding: 50px;
+      }
+      
+      #cta h2 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      
+      #cta p {
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+      
+      #cta a {
+        display: inline-block;
+        background-color: white;
+        color: #005A8C;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 20px 40px;
+        text-decoration: none;
+        border-radius: 10px;
+      }
+      
+      #cta a:hover {
+        background-color: #005A8C;
+        color: white;
+        transition: background-color 0.3s ease;
+      }
+      
+      #footer {
+        background-color: #CCCCCC;
+        color: #333333;
+        text-align: center;
+        padding: 20px;
+      }
+      
+      #footer p {
+        margin: 0;
+      }
+    </
